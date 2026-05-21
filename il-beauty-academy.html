@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>IL Beauty Academy – Antioch, CA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --black: #0a0a0a;
+      --deep: #111111;
+      --gold: #c9a84c;
+      --gold-light: #e2c47a;
+      --white: #f5f0e8;
+      --white-dim: rgba(245,240,232,0.07);
+      --gray: #888;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--white); font-family: 'Montserrat', sans-serif; font-weight: 300; overflow-x: hidden; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.4rem 4rem; background: rgba(10,10,10,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(201,168,76,0.12); }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; letter-spacing: 0.18em; color: var(--gold); text-decoration: none; text-transform: uppercase; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: var(--white); text-decoration: none; font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.7; transition: opacity 0.2s, color 0.2s; }
+    .nav-links a:hover { opacity: 1; color: var(--gold); }
+    .nav-book { background: var(--gold) !important; color: var(--black) !important; padding: 0.55rem 1.4rem; opacity: 1 !important; font-weight: 600 !important; }
+    .nav-book:hover { background: var(--gold-light) !important; }
+
+    /* BUTTONS */
+    .btn-primary { background: var(--gold); color: var(--black); padding: 1rem 2.6rem; font-family: 'Montserrat', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; text-decoration: none; border: none; cursor: pointer; transition: background 0.2s, transform 0.2s; display: inline-block; }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); }
+    .btn-outline { background: transparent; color: var(--white); padding: 1rem 2.6rem; font-family: 'Montserrat', sans-serif; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; text-decoration: none; border: 1px solid rgba(245,240,232,0.3); cursor: pointer; transition: border-color 0.2s, color 0.2s, transform 0.2s; display: inline-block; }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+
+    /* SECTION COMMON */
+    section { padding: 7rem 2rem; }
+    .section-label { font-size: 0.6rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; display: block; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 300; line-height: 1.1; margin-bottom: 1rem; }
+    .section-title em { font-style: italic; color: var(--gold); }
+    .divider { width: 48px; height: 1px; background: var(--gold); margin: 1.5rem 0 3rem; }
+    .inner { max-width: 1100px; margin: 0 auto; }
+    .inner-sm { max-width: 700px; margin: 0 auto; }
+
+    /* HERO */
+    #inicio { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 8rem 2rem 4rem; background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(201,168,76,0.08) 0%, transparent 70%); }
+    .hero-line { width: 1px; height: 80px; background: linear-gradient(to bottom, transparent, var(--gold)); margin: 0 auto 2.5rem; }
+    .hero-eyebrow { font-size: 0.65rem; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+    h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.2rem, 9vw, 7rem); font-weight: 300; line-height: 1.0; letter-spacing: 0.04em; color: var(--white); margin-bottom: 0.3rem; }
+    h1 em { font-style: italic; color: var(--gold); }
+    .hero-sub { font-size: 0.75rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gray); margin-top: 1.4rem; margin-bottom: 3rem; }
+    .hero-ctas { display: flex; gap: 1.2rem; flex-wrap: wrap; justify-content: center; }
+    .hero-location { margin-top: 3rem; font-size: 0.62rem; letter-spacing: 0.18em; color: var(--gray); text-transform: uppercase; }
+    .hero-location span { color: var(--gold); }
+
+    /* SERVICES */
+    #servicios { background: var(--deep); border-top: 1px solid rgba(201,168,76,0.1); border-bottom: 1px solid rgba(201,168,76,0.1); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1px; background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.1); }
+    .service-card { background: var(--deep); padding: 2rem 1.8rem; transition: background 0.3s; position: relative; overflow: hidden; }
+    .service-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--gold); transition: width 0.4s ease; }
+    .service-card:hover { background: var(--white-dim); }
+    .service-card:hover::after { width: 100%; }
+    .service-name { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 400; margin-bottom: 0.5rem; color: var(--white); }
+    .service-desc { font-size: 0.72rem; color: var(--gray); margin-top: 0.4rem; line-height: 1.7; }
+    .service-link { display: inline-block; margin-top: 1rem; font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+    .service-link:hover { border-color: var(--gold); }
+
+    /* COURSES */
+    #cursos { background: var(--deep); border-top: 1px solid rgba(201,168,76,0.1); border-bottom: 1px solid rgba(201,168,76,0.1); text-align: center; }
+
+    /* GALLERY */
+    #galeria { background: var(--black); }
+    .gallery-wrap { max-width: 1100px; margin: 0 auto; }
+    .gallery-featured {
+      width: 100%;
+      aspect-ratio: 16/7;
+      background: var(--deep);
+      border: 1px solid rgba(201,168,76,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      margin-bottom: 8px;
+      transition: border-color 0.3s;
+    }
+    .gallery-featured:hover { border-color: var(--gold); }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+    .gallery-item {
+      background: var(--deep);
+      border: 1px solid rgba(201,168,76,0.12);
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--gray);
+      overflow: hidden;
+      transition: border-color 0.3s;
+    }
+    .gallery-item:hover { border-color: var(--gold); }
+    .gallery-placeholder { display: flex; align-items: center; justify-content: center; padding: 1rem; opacity: 0.4; }
+
+    /* REVIEWS */
+    #resenas { background: var(--deep); border-top: 1px solid rgba(201,168,76,0.1); }
+    .rating-hero { display: flex; align-items: center; gap: 2rem; margin-bottom: 3.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(201,168,76,0.12); }
+    .rating-number { font-family: 'Cormorant Garamond', serif; font-size: 5rem; font-weight: 300; color: var(--gold); line-height: 1; }
+    .stars { color: var(--gold); font-size: 1.1rem; letter-spacing: 0.1em; }
+    .rating-count { font-size: 0.68rem; letter-spacing: 0.15em; color: var(--gray); text-transform: uppercase; margin-top: 0.4rem; }
+    .reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+    .review-card { background: var(--black); border: 1px solid rgba(201,168,76,0.1); padding: 1.8rem; transition: border-color 0.3s; }
+    .review-card:hover { border-color: rgba(201,168,76,0.4); }
+    .review-stars { color: var(--gold); font-size: 0.8rem; margin-bottom: 1rem; }
+    .review-text { font-size: 0.82rem; line-height: 1.8; color: rgba(245,240,232,0.8); font-style: italic; margin-bottom: 1.2rem; }
+    .review-author { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); }
+    .review-service { font-size: 0.62rem; color: var(--gray); margin-top: 0.2rem; }
+
+    /* BOOKING */
+    #reservar { background: var(--black); text-align: center; }
+    .booking-box { background: var(--deep); border: 1px solid rgba(201,168,76,0.2); padding: 3rem 2rem; margin-bottom: 2rem; }
+    .booking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; max-width: 400px; margin: 2rem auto 0; }
+    .booking-cat { background: var(--white-dim); border: 1px solid rgba(201,168,76,0.2); padding: 1rem; text-align: center; text-decoration: none; color: var(--white); font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; transition: border-color 0.2s, color 0.2s; }
+    .booking-cat:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* FOOTER */
+    footer { border-top: 1px solid rgba(201,168,76,0.12); padding: 3rem 2rem; display: flex; flex-direction: column; align-items: center; gap: 1.2rem; text-align: center; background: var(--deep); }
+    .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 300; letter-spacing: 0.2em; color: var(--gold); text-transform: uppercase; }
+    .footer-address { font-size: 0.65rem; letter-spacing: 0.18em; color: var(--gray); text-transform: uppercase; }
+    .social-links { display: flex; gap: 2rem; align-items: center; margin-top: 0.5rem; }
+    .social-link { color: var(--gold); text-decoration: none; display: flex; flex-direction: column; align-items: center; gap: 0.4rem; transition: opacity 0.2s; }
+    .social-link:hover { opacity: 0.7; }
+    .social-link span { font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase; }
+    .footer-copy { font-size: 0.58rem; color: rgba(136,136,136,0.4); letter-spacing: 0.1em; }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      nav { padding: 1.2rem 1.5rem; }
+      .nav-links { display: none; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .gallery-item.featured { grid-column: span 2; }
+      .rating-hero { flex-direction: column; align-items: flex-start; gap: 1rem; }
+      .booking-box { padding: 1.5rem; }
+      section { padding: 5rem 1.5rem; }
+
+      /* Galería featured: una foto por fila en móvil */
+      .gallery-featured {
+        aspect-ratio: auto;
+        flex-direction: column;
+        height: auto;
+        display: flex !important;
+        gap: 8px;
+      }
+      .gallery-featured img {
+        width: 100% !important;
+        height: 260px !important;
+        object-fit: cover;
+      }
+
+      /* Sección Sobre Lorena: una columna en móvil */
+      #sobre > div {
+        grid-template-columns: 1fr !important;
+        gap: 2.5rem !important;
+      }
+      #sobre > div > div:first-child {
+        margin-top: 20px;
+      }
+      #sobre > div > div:first-child > div {
+        display: none; /* oculta el borde decorativo que se desborda */
+      }
+      #sobre img {
+        width: 100% !important;
+        max-height: 420px;
+        object-fit: cover;
+        object-position: top;
+      }
+
+      /* Stats de Lorena en móvil */
+      #sobre > div > div:last-child > div[style*="display:flex"] {
+        flex-wrap: wrap;
+        gap: 1.2rem !important;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a class="nav-logo" href="#inicio">IL Beauty Academy</a>
+    <ul class="nav-links">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#galeria">Galería</a></li>
+      <li><a href="#resenas">Reseñas</a></li>
+      <li><a href="#sobre">Sobre Mí</a></li>
+      <li><a href="#reservar">Reservar</a></li>
+      <li><a href="https://booksy.com/en-us/1698446_il-beauty-academy_nail-salon_103886_antioch" target="_blank" class="nav-book">Agendar</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="inicio">
+    <div class="hero-line"></div>
+    <p class="hero-eyebrow">Antioch, California · Est. 2024</p>
+    <h1>IL Beauty<br><em>Academy</em></h1>
+    <p class="hero-sub">Nails · Lashes · Brows · Skin · Wax</p>
+    <div class="hero-ctas">
+      <a href="https://booksy.com/en-us/1698446_il-beauty-academy_nail-salon_103886_antioch" target="_blank" class="btn-primary">Agendar en Booksy</a>
+      <a href="#servicios" class="btn-outline">Ver Servicios</a>
+    </div>
+    <p class="hero-location">5065 Deer Valley Rd, Suite 233 · <span>Antioch, CA 94531</span></p>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios">
+    <div class="inner">
+      <span class="section-label">Lo que ofrecemos</span>
+      <h2 class="section-title">Nuestros <em>Servicios</em></h2>
+      <div class="divider"></div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-name">Manicura Rusa</div>
+          <div class="service-desc">Técnica profesional de cutículas. Acabado impecable que dura semanas.</div>
+          <a href="https://booksy.com/en-us/1698446_il-beauty-academy_nail-salon_103886_antioch" target="_blank" class="service-link">Ver precios y disponibilidad →</a>
+        </div>
+        <div class="service-card">
+          <div class="service-name">Pedicura Pro en Seco</div>
+          <div class="service-desc">Pedicura profesional en seco. Pies perfectos sin agua.</div>
+          <a href="https://booksy.com/en-us/1698446_il-beauty-academy_nail-salon_103886_antioch" target="_blank" class="service-link">Ver precios y disponibilidad →</a>
+        </div>
+        <div class="service-card">
+          <div class="service-name">Threading</div>
+          <div class="service-desc">Depilación con hilo para cejas y rostro. Preciso y duradero.</div>
+          <a href="https://booksy.com/en-us/1698446_il-beauty-academy_nail-salon_103886_antioch" target="_blank" class="service-link">Ver precios y disponibilidad →</a>
+        </div>
+        <div class="service-card">
+          <div class="service-name">Lashes – Wispy Set</div>
+          <div class="service-desc">Pestañas wispy naturales y dramáticas. El set más solicitado.</div>
+          <a href="https://booksy.com/en-us/1698446_il-beauty-academy_nail-salon_103886_antioch" target="_blank" class="service-link">Ver precios y disponibilidad →</a>
+        </div>
+        <div class="service-card">
+          <div class="service-name">Microblading</div>
+          <div class="service-desc">Cejas perfectas con técnica semipermanente de pelo a pelo.</div>
+          <a href="https://booksy.com/en-us/1698446_il-beauty-academy_nail-salon_103886_antioch" target="_blank" class="service-link">Ver precios y disponibilidad →</a>
+        </div>
+        <div class="service-card">
+          <div class="service-name">Lifting Coreano</div>
+          <div class="service-desc">Lifting facial coreano no invasivo. Piel firme y luminosa.</div>
+          <a href="https://booksy.com/en-us/1698446_il-beauty-academy_nail-salon_103886_antioch" target="_blank" class="service-link">Ver precios y disponibilidad →</a>
+        </div>
+        <div class="service-card">
+          <div class="service-name">Acrylic Full Set</div>
+          <div class="service-desc">Uñas acrílicas completas con forma y longitud personalizada.</div>
+          <a href="https://booksy.com/en-us/1698446_il-beauty-academy_nail-salon_103886_antioch" target="_blank" class="service-link">Ver precios y disponibilidad →</a>
+        </div>
+        <div class="service-card">
+          <div class="service-name">Limpieza Facial</div>
+          <div class="service-desc">Limpieza profunda y revitalizante para una piel radiante.</div>
+          <a href="https://booksy.com/en-us/1698446_il-beauty-academy_nail-salon_103886_antioch" target="_blank" class="service-link">Ver precios y disponibilidad →</a>
+        </div>
+        <div class="service-card">
+          <div class="service-name">Henna Brows</div>
+          <div class="service-desc">Tinte de henna para cejas definidas y de larga duración.</div>
+          <a href="https://booksy.com/en-us/1698446_il-beauty-academy_nail-salon_103886_antioch" target="_blank" class="service-link">Ver precios y disponibilidad →</a>
+        </div>
+        <div class="service-card">
+          <div class="service-name">Pedicura Spa</div>
+          <div class="service-desc">Experiencia completa de relajación y cuidado para tus pies.</div>
+          <a href="https://booksy.com/en-us/1698446_il-beauty-academy_nail-salon_103886_antioch" target="_blank" class="service-link">Ver precios y disponibilidad →</a>
+        </div>
+        <div class="service-card">
+          <div class="service-name">Lashes Classic Set</div>
+          <div class="service-desc">Pestañas clásicas naturales para un look elegante y duradero.</div>
+          <a href="https://booksy.com/en-us/1698446_il-beauty-academy_nail-salon_103886_antioch" target="_blank" class="service-link">Ver precios y disponibilidad →</a>
+        </div>
+        <div class="service-card">
+          <div class="service-name">Gel Semipermanente</div>
+          <div class="service-desc">Manicura en gel de larga duración con acabado brillante y colores vibrantes.</div>
+          <a href="https://booksy.com/en-us/1698446_il-beauty-academy_nail-salon_103886_antioch" target="_blank" class="service-link">Ver precios y disponibilidad →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section id="galeria">
+    <div class="inner">
+      <span class="section-label">Nuestro trabajo</span>
+      <h2 class="section-title">La <em>Galería</em></h2>
+      <div class="divider"></div>
+      <div class="gallery-featured" style="display:grid; grid-template-columns:1fr 1fr; gap:8px; aspect-ratio:unset;">
+        <img src="featured-left.jpg" alt="Nail art by Lorena" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+        <img src="featured-right.jpg" alt="Nail art by Lorena" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="nail-photo.jpg" alt="Nails by Lorena" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+        </div>
+        <div class="gallery-item">
+          <img src="lashes-photo.jpg" alt="Lashes by Lorena" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+        </div>
+        <div class="gallery-item">
+          <img src="brows-photo.jpg" alt="Brows by Lorena" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+        </div>
+        <div class="gallery-item">
+          <img src="pedicure-photo.jpg" alt="Pedicure by Lorena" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+        </div>
+      </div>
+      <p style="margin-top:1.5rem;font-size:0.68rem;letter-spacing:0.15em;color:var(--gray);text-align:center;font-style:italic;">Próximamente — fotos de nuestros trabajos</p>
+    </div>
+  </section>
+
+  <!-- RESEÑAS -->
+  <section id="resenas">
+    <div class="inner">
+      <span class="section-label">Lo que dicen nuestros clientes</span>
+      <h2 class="section-title"><em>Reseñas</em></h2>
+      <div class="divider"></div>
+      <div class="rating-hero">
+        <div class="rating-number">5.0</div>
+        <div>
+          <div class="stars">★★★★★</div>
+          <div class="rating-count">18 reseñas verificadas · Booksy</div>
+        </div>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"She's amazing! I love my nails, and the best thing is that they last 4–5 weeks."</p>
+          <div class="review-author">Mireivis</div>
+          <div class="review-service">Manicura · Mayo 2026</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Me encantó, trabaja súper bien, es muy detallista y su trabajo espectacular. ¡Lo amé!"</p>
+          <div class="review-author">Stephanie</div>
+          <div class="review-service">Manicura Rusa · Mayo 2026</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Lorena was very detail oriented, took her time and provided me with great services. You won't regret booking with her!"</p>
+          <div class="review-author">Heidi</div>
+          <div class="review-service">Press On Gelex + Pedicura · Abril 2026</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Su servicio es muy profesional, súper recomendable. Me encantó todo."</p>
+          <div class="review-author">Estefany</div>
+          <div class="review-service">Manicura y Pedicura Spa · Abril 2026</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Súper excelente servicio, eficiente y muy amable. Muy recomendable."</p>
+          <div class="review-author">Rosy</div>
+          <div class="review-service">Pedicura + Manicura · Mayo 2026</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Muy buen trabajo. Quedé encantada con el resultado de mi limpieza facial."</p>
+          <div class="review-author">Daniela</div>
+          <div class="review-service">Limpieza Facial · Mayo 2026</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE LORENA -->
+  <section id="sobre" style="background: var(--black); border-top: 1px solid rgba(201,168,76,0.1);">
+    <div style="max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center;">
+      
+      <!-- Foto -->
+      <div style="position:relative;">
+        <div style="position:absolute; top:-20px; left:-20px; width:100%; height:100%; border:1px solid rgba(201,168,76,0.25);"></div>
+        <img src="lorena-photo.jpg" alt="Lorena Salazar – IL Beauty Academy" style="width:100%; display:block; position:relative; z-index:1; filter:grayscale(15%);"/>
+      </div>
+
+      <!-- Texto -->
+      <div>
+        <span class="section-label">La artista detrás del trabajo</span>
+        <h2 class="section-title">Lorena <em>Salazar</em></h2>
+        <div class="divider"></div>
+        <p style="font-size:0.82rem; line-height:2; color:rgba(245,240,232,0.75); margin-bottom:1.5rem;">
+          Venezolana, emprendedora y apasionada por el mundo de la belleza. Con casi <strong style="color:var(--gold);">15 años de trayectoria</strong> en la industria y más de <strong style="color:var(--gold);">5 años especializada</strong> en uñas, manicura rusa, nivelación y pedicura en seco.
+        </p>
+        <p style="font-size:0.82rem; line-height:2; color:rgba(245,240,232,0.75); margin-bottom:2.5rem;">
+          IL Beauty Academy nace con el propósito de ofrecer servicios y educación de calidad — un espacio donde la belleza, la preparación y el crecimiento van de la mano.
+        </p>
+        <div style="display:flex; gap:2rem;">
+          <div style="text-align:center;">
+            <div style="font-family:'Cormorant Garamond',serif; font-size:2.8rem; font-weight:300; color:var(--gold); line-height:1;">15</div>
+            <div style="font-size:0.58rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gray); margin-top:0.3rem;">Años de experiencia</div>
+          </div>
+          <div style="width:1px; background:rgba(201,168,76,0.2);"></div>
+          <div style="text-align:center;">
+            <div style="font-family:'Cormorant Garamond',serif; font-size:2.8rem; font-weight:300; color:var(--gold); line-height:1;">5★</div>
+            <div style="font-size:0.58rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gray); margin-top:0.3rem;">Calificación en Booksy</div>
+          </div>
+          <div style="width:1px; background:rgba(201,168,76,0.2);"></div>
+          <div style="text-align:center;">
+            <div style="font-family:'Cormorant Garamond',serif; font-size:2.8rem; font-weight:300; color:var(--gold); line-height:1;">18+</div>
+            <div style="font-size:0.58rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--gray); margin-top:0.3rem;">Clientes satisfechas</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- RESERVAR -->
+  <section id="reservar">
+    <div class="inner-sm">
+      <span class="section-label">Agenda tu cita</span>
+      <h2 class="section-title">Reserva <em>Online</em></h2>
+      <div class="divider" style="margin-left:auto;margin-right:auto;"></div>
+      <div class="booking-box">
+        <p style="font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-style:italic;color:var(--white);opacity:0.85;margin-bottom:2rem;line-height:1.6;">
+          Agenda tu cita en minutos — elige el servicio, la fecha y el horario que prefieras.
+        </p>
+        <a href="https://booksy.com/en-us/1698446_il-beauty-academy_nail-salon_103886_antioch" target="_blank" class="btn-primary" style="width:100%;text-align:center;padding:1.2rem 2rem;font-size:0.8rem;display:block;">
+          Agendar Cita en Booksy
+        </a>
+        <div class="booking-grid">
+          <a href="https://booksy.com/en-us/1698446_il-beauty-academy_nail-salon_103886_antioch" target="_blank" class="booking-cat">Nails</a>
+          <a href="https://booksy.com/en-us/1698446_il-beauty-academy_nail-salon_103886_antioch" target="_blank" class="booking-cat">Lashes</a>
+          <a href="https://booksy.com/en-us/1698446_il-beauty-academy_nail-salon_103886_antioch" target="_blank" class="booking-cat">Brows</a>
+          <a href="https://booksy.com/en-us/1698446_il-beauty-academy_nail-salon_103886_antioch" target="_blank" class="booking-cat">Skin & Wax</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">IL Beauty Academy</div>
+    <div class="footer-address">5065 Deer Valley Rd, Suite 233 · Antioch, CA 94531</div>
+    <div class="social-links">
+      <a href="https://www.instagram.com/cuidatupiel.vida" target="_blank" class="social-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        <span>Instagram</span>
+      </a>
+      <a href="https://www.tiktok.com/@nailslore19" target="_blank" class="social-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.17 8.17 0 004.78 1.52V6.75a4.85 4.85 0 01-1.01-.06z"/></svg>
+        <span>TikTok</span>
+      </a>
+      <a href="https://wa.me/19253908288" target="_blank" class="social-link">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span>WhatsApp</span>
+      </a>
+    </div>
+    <div class="footer-copy">© 2026 IL Beauty Academy · Todos los derechos reservados</div>
+  </footer>
+
+</body>
+</html>
