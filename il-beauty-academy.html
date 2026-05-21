@@ -74,18 +74,18 @@
     .gallery-wrap { max-width: 1100px; margin: 0 auto; }
     .gallery-featured {
       width: 100%;
-      background: transparent;
-      display: flex;
-      align-items: stretch;
-      justify-content: center;
-      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
       margin-bottom: 8px;
     }
     .gallery-featured img {
-      border: 1px solid rgba(201,168,76,0.12);
-      transition: border-color 0.3s;
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      display: block;
+      border: none;
     }
-    .gallery-featured img:hover { border-color: var(--gold); }
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -93,15 +93,16 @@
     }
     .gallery-item {
       background: var(--black);
-      border: 1px solid rgba(201,168,76,0.12);
-      aspect-ratio: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       overflow: hidden;
-      transition: border-color 0.3s;
     }
-    .gallery-item:hover { border-color: var(--gold); }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      aspect-ratio: 1;
+      border: none;
+    }
     .gallery-placeholder { display: flex; align-items: center; justify-content: center; padding: 1rem; opacity: 0.4; }
 
     /* REVIEWS */
@@ -147,16 +148,10 @@
 
       /* Galería featured: una foto por fila en móvil */
       .gallery-featured {
-        aspect-ratio: auto;
-        flex-direction: column;
-        height: auto;
-        display: flex !important;
-        gap: 8px;
+        grid-template-columns: 1fr !important;
       }
       .gallery-featured img {
-        width: 100% !important;
-        height: 260px !important;
-        object-fit: cover;
+        height: 300px !important;
       }
 
       /* Sección Sobre Lorena: una columna en móvil */
@@ -291,22 +286,22 @@
       <span class="section-label">Nuestro trabajo</span>
       <h2 class="section-title">La <em>Galería</em></h2>
       <div class="divider"></div>
-      <div class="gallery-featured" style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
-        <img src="featuredleft.jpg" alt="Nail art by Lorena" style="width:100%;height:380px;object-fit:cover;display:block;"/>
-        <img src="featuredright.jpg" alt="Nail art by Lorena" style="width:100%;height:380px;object-fit:cover;display:block;"/>
+      <div class="gallery-featured">
+        <img src="featuredleft.jpg" alt="Nail art by Lorena"/>
+        <img src="featuredright.jpg" alt="Nail art by Lorena"/>
       </div>
       <div class="gallery-grid">
         <div class="gallery-item">
-          <img src="nailphoto.jpg" alt="Nails by Lorena" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+          <img src="nailphoto.jpg" alt="Nails by Lorena"/>
         </div>
         <div class="gallery-item">
-          <img src="lashesphoto.jpg" alt="Lashes by Lorena" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+          <img src="lashesphoto.jpg" alt="Lashes by Lorena"/>
         </div>
         <div class="gallery-item">
-          <img src="browsphoto.jpg" alt="Brows by Lorena" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+          <img src="browsphoto.jpg" alt="Brows by Lorena"/>
         </div>
         <div class="gallery-item">
-          <img src="pedicurephoto.jpg" alt="Pedicure by Lorena" style="width:100%;height:100%;object-fit:cover;display:block;"/>
+          <img src="pedicurephoto.jpg" alt="Pedicure by Lorena"/>
         </div>
       </div>
       <p style="margin-top:1.5rem;font-size:0.68rem;letter-spacing:0.15em;color:var(--gray);text-align:center;font-style:italic;">Próximamente — fotos de nuestros trabajos</p>
