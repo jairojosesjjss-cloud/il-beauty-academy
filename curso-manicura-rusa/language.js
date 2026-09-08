@@ -18,8 +18,11 @@ const meta=document.querySelector('meta[name="description"]'), description=meta.
 function setLanguage(lang) {
  const en=lang==='en';
  document.documentElement.lang=en?'en':'es';
- nodes.forEach(x=>x.node.nodeValue=en?x.english:x.original);
- attrs.forEach(x=>x.el.setAttribute(x.key,en?x.english:x.original));
+ const poster=document.querySelector('.poster');
+ poster.href=en?'curso-manicura-en.png':'curso-manicura.png';
+ poster.querySelector('img').src=poster.href;
+ nodes.forEach(x=>x.node.nodeValue=en?x.english.replace('Course flyer (Spanish)','Course flyer'):x.original);
+ attrs.forEach(x=>x.el.setAttribute(x.key,en?x.english.replace(' in Spanish','').replace('Spanish course flyer','Course flyer'):x.original));
  document.title=en?translations[title]:title;
  meta.content=en?'In-person Russian Manicure, Gels and Gel-X course in Antioch. Kit and follow-up included. Total $650 USD; reserve with $200.':description;
  links.forEach(x=>x.el.href=en?'https://wa.me/19253908288?text='+encodeURIComponent('Hi, I would like to book the Russian Manicure, Gels and Gel-X course with Yurisbel for '+x.date+'. Are spots available, and how can I reserve with $200 USD?'):x.original);
