@@ -37,10 +37,11 @@ a:focus-visible,summary:focus-visible{outline-color:#f1d29a}
 .teachers{grid-template-columns:1.15fr 1fr;gap:24px}.teacher{min-width:0;padding:16px;border:1px solid var(--line);background:#15120e;border-radius:4px}.teacher.master{border-color:#96703b}.teacher-photo{width:115px;height:150px;object-fit:cover;object-position:50% 12%;flex-shrink:0;border-radius:3px}.teacher-photo.lorena{object-position:50% 14%}.teacher .label{font-size:9px;margin-bottom:8px}.social{display:inline-block;color:#ebc88c;font-size:12px;margin-top:10px;overflow-wrap:anywhere;text-underline-offset:4px}.schedule{padding:0 0 30px}.schedule h2{font-size:28px;margin-bottom:15px}.calendar{display:flex;flex-wrap:wrap;gap:10px}.calendar span{padding:10px 16px;border:1px solid var(--line);border-radius:3px;color:#ecd4aa;font-size:14px}.venue{font-style:normal;margin:16px 0 0;color:var(--muted);font-size:14px}.venue a{display:inline-block;color:#ebc88c;margin-top:8px;text-underline-offset:4px}
 @media(max-width:800px){.teachers{grid-template-columns:1fr}.teacher-photo{width:100px;height:125px}}
 .schedule{scroll-margin-top:24px}.schedule-help{font-size:14px;color:var(--muted);margin-bottom:16px}.calendar{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.date-option{display:flex;flex-direction:column;gap:8px;padding:20px 16px;border:1px solid #876536;border-radius:4px;background:#1b160f;text-decoration:none;min-height:100px;justify-content:center}.date-option strong{font-size:16px;color:#f1d29a}.date-option small{font-size:12px;color:#c9beab}.date-option:hover{background:#302414;border-color:#f1d29a}.date-option:focus-visible{outline:3px solid #f1d29a;outline-offset:3px}
+.language-switch{display:flex;gap:4px}.language-switch button{font:12px Arial,sans-serif;min-height:44px;padding:8px 12px;border:1px solid #70532d;background:transparent;color:#eadbe4;border-radius:3px;cursor:pointer}.language-switch button[aria-pressed="true"]{background:#e8c387;color:#21170b}.language-switch button:focus-visible{outline:3px solid #f1d29a;outline-offset:3px}nav .wrap{flex-wrap:wrap}.teacher>div{min-width:0}@media(max-width:400px){nav .location{display:none}}
 </style>
 </head>
 <body>
-<nav aria-label="Academia"><div class="wrap"><a class="brand" href="../index.html">IL Beauty Academy</a><span class="location">Antioch, California</span></div></nav>
+<nav aria-label="Academia"><div class="wrap"><a class="brand" href="../index.html">IL Beauty Academy</a><span class="location">Antioch, California</span><div class="language-switch" role="group" aria-label="Idioma / Language"><button type="button" data-lang="es" lang="es" aria-pressed="true">Español</button><button type="button" data-lang="en" lang="en" aria-pressed="false">English</button></div></div></nav>
 <main class="wrap">
 <section class="hero">
 <div><span class="label">Presencial · Desde cero</span><h1>Aprende Manicura Rusa, <em>Geles y Gel-X.</em></h1>
@@ -66,5 +67,6 @@ a:focus-visible,summary:focus-visible{outline-color:#f1d29a}
 <details><summary>Ver contenido del kit</summary><p>Lima, spongee, builder, builder gel, deshidratador, bond, acryl gel, kit de brocas, líquido moldeador, esmalte semipermanente, base, top y tips Gel-X.</p></details>
 </main>
 <footer>IL Beauty Academy · Antioch, California<br><a href="tel:+19253908288">+1 925 390-8288</a></footer>
+<script src="language.js"></script>
 </body>
 </html>
