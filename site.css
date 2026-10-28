@@ -1,0 +1,32 @@
+/* Logo con monograma y selector de idioma (compartido por todas las páginas) */
+.logo{display:inline-flex;align-items:center;gap:.7rem;white-space:nowrap;}
+.logo .logo-mark{display:inline-flex;align-items:center;justify-content:center;width:2.2rem;height:2.2rem;flex:none;
+  background:var(--ink);color:var(--gold);font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.05rem;letter-spacing:.04em;
+  box-shadow:inset 0 0 0 2px var(--ink),inset 0 0 0 3px var(--gold);}
+.logo .logo-text{color:var(--ink);}
+
+nav{gap:1.2rem;}
+.nav-links{margin-left:auto;}
+.lang-switch{display:flex;flex:none;border:1px solid var(--line);}
+.lang-switch button{font:600 .75rem/1 'Montserrat',Arial,sans-serif;letter-spacing:.08em;min-width:44px;min-height:36px;padding:0 .6rem;
+  border:0;background:transparent;color:var(--ink-soft);cursor:pointer;}
+.lang-switch button[aria-pressed="true"]{background:var(--ink);color:#fff;}
+.lang-switch button:focus-visible{outline:2px solid var(--gold-deep);outline-offset:2px;}
+
+@media (max-width:768px){
+  nav{gap:.6rem;}
+  .logo{gap:.55rem;font-size:1.05rem;letter-spacing:.1em;}
+  .logo .logo-mark{width:2rem;height:2rem;font-size:.95rem;}
+  .lang-switch{margin-left:auto;}
+  .lang-switch button{min-height:40px;min-width:40px;padding:0 .4rem;}
+}
+@media (max-width:360px){
+  .logo .logo-text{font-size:.9rem;letter-spacing:.06em;}
+}
+@media (min-width:769px) and (max-width:1180px){
+  .logo .logo-mark{width:1.9rem;height:1.9rem;font-size:.9rem;}
+}
+/* Tablets pequeñas: solo el monograma para que el menú quepa en una línea */
+@media (min-width:769px) and (max-width:960px){
+  .logo .logo-text{display:none;}
+}

@@ -6,6 +6,18 @@
 <meta name="color-scheme" content="light only"/>
 <meta name="supported-color-schemes" content="light"/>
 <title>Cursos de Belleza · IL Beauty Academy — Antioch, CA</title>
+<link rel="icon" type="image/png" sizes="32x32" href="/img/icon-32.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/img/icon-180.png"/>
+<meta name="theme-color" content="#14110d"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="IL Beauty Academy"/>
+<meta property="og:title" content="Cursos de uñas · IL Beauty Academy"/>
+<meta property="og:description" content="Acrílico, Manicura Rusa y Pedicura en seco en Antioch, CA. Kit y certificado incluidos. / Nail courses with kit and certificate."/>
+<meta property="og:url" content="https://ilbeautyacademy.com/cursos/"/>
+<meta property="og:image" content="https://ilbeautyacademy.com/img/og-image.jpg"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta name="twitter:card" content="summary_large_image"/>
 <meta name="description" content="Cursos profesionales de acrílico, Manicura Rusa y pedicura en seco en Antioch, CA. Temarios, precios y reservas por WhatsApp."/>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
@@ -295,12 +307,13 @@
   }
 </style>
 <link rel="stylesheet" href="/typography.css?v=2"/>
+<link rel="stylesheet" href="/site.css?v=1"/>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <a href="/" class="logo">IL <span>Beauty Academy</span></a>
+  <a href="/" class="logo" aria-label="IL Beauty Academy"><span class="logo-mark" aria-hidden="true">IL</span><span class="logo-text">Beauty Academy</span></a>
   <input type="checkbox" id="navtog"/>
   <ul class="nav-links">
     <li><a href="/#instructora">La Academia</a></li>
@@ -310,6 +323,7 @@
     <li><a href="/#faq">Preguntas</a></li>
     <li><a class="nav-cta" href="/citas/">Reservar cita</a></li>
   </ul>
+  <div class="lang-switch" role="group" aria-label="Idioma / Language"><button type="button" data-lang="es" lang="es" aria-pressed="true">ES</button><button type="button" data-lang="en" lang="en" aria-pressed="false">EN</button></div>
   <label class="hamb" for="navtog"><span></span><span></span><span></span></label>
 </nav>
 
@@ -319,7 +333,7 @@
   <div class="wrap">
     <div class="head center reveal">
       <span class="eyebrow">Nuestros programas</span>
-      <h2 class="display">Cursos <em>profesionales</em></h2>
+      <h2 class="display" data-en="Professional <em>courses</em>">Cursos <em>profesionales</em></h2>
       <div class="rule"></div>
     </div>
     <div class="courses-grid">
@@ -663,5 +677,6 @@
 /* Cerrar menú móvil al tocar un enlace */
 document.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('navtog').checked=false;});});
 </script>
+<script src="/lang.js?v=1"></script>
 </body>
 </html>
