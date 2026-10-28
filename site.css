@@ -30,3 +30,23 @@ nav{gap:1.2rem;}
 @media (min-width:769px) and (max-width:960px){
   .logo .logo-text{display:none;}
 }
+
+/* Ubicación con mapa */
+.visit{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.visit-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:3.5rem;align-items:center;}
+.visit-info .eyebrow{display:block;margin-bottom:1rem;}
+.visit-info h2{font-size:clamp(2rem,4.2vw,3.4rem);}
+.visit-info .rule{margin:1.4rem 0 1.8rem;}
+.visit-addr{font-size:1.05rem;line-height:1.7;color:var(--ink);font-weight:500;}
+.visit-note{font-size:.9rem;color:var(--ink-soft);margin:.6rem 0 2rem;}
+.visit-ctas{display:flex;gap:.8rem;flex-wrap:wrap;}
+.visit-map{border:1px solid var(--line);box-shadow:0 18px 44px rgba(20,17,13,0.08);background:#fff;}
+.visit-map iframe{display:block;width:100%;height:380px;border:0;}
+a.foot-addr{text-decoration:none;}
+a.foot-addr:hover{color:var(--gold-deep);text-decoration:underline;}
+@media (max-width:768px){
+  .visit{padding:4.5rem 1.2rem;}
+  .visit-grid{grid-template-columns:1fr;gap:2.2rem;}
+  .visit-map iframe{height:300px;}
+  .visit-ctas .btn{flex:1;text-align:center;padding:1rem 1.2rem;}
+}
