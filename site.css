@@ -88,3 +88,22 @@ a.foot-addr:hover{color:var(--gold-deep);text-decoration:underline;}
 a.trust-link{text-decoration:none;color:inherit;display:block;transition:background .2s;}
 a.trust-link:hover{background:rgba(201,168,76,.08);}
 @media (max-width:768px){ .visit-ctas .btn{flex:1 1 100%;} }
+
+/* Portada unida: foto de Lorena con marco + título, historia y botones */
+.intro{background:var(--paper-2);padding:9rem 2rem 5.5rem;border-bottom:1px solid var(--line);}
+.intro .inst-text .eyebrow{margin-bottom:1rem;}
+.intro .inst-text h1{font-size:clamp(2.4rem,4.4vw,4rem);margin-bottom:1.2rem;color:var(--ink);}
+.intro .intro-who{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:1rem;}
+.intro .hero-ctas{margin-top:2.2rem;}
+@media (max-width:768px){
+  .intro{padding:6.4rem 1.2rem 3.4rem;}
+  .intro .inst-photo img{max-height:none;aspect-ratio:4/5;}
+  .intro .inst-text h1{font-size:clamp(2.1rem,8.2vw,3.2rem);}
+  .intro .hero-ctas .btn{flex:1 1 auto;text-align:center;padding:1rem 1.2rem;}
+}
+.intro .inst-photo img{height:auto;aspect-ratio:4/5;object-position:center 12%;}
+@media (max-width:768px){
+  /* Foto más baja en el celular para que el título se vea al abrir la página */
+  .intro .inst-photo img{aspect-ratio:auto;height:44vh;min-height:260px;object-position:center 18%;}
+  .intro .inst-grid{gap:1.8rem;}
+}
