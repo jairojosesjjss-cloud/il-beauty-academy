@@ -134,3 +134,11 @@ a.perk:hover .perk-ic{background:var(--gold);color:var(--ink);}
   .perk-tx strong{font-size:1.15rem;}
   .perk-tx span{font-size:.78rem;}
 }
+
+/* Mapa con etiqueta Suite 205 y botones Google / Apple Maps */
+.visit-map{position:relative;}
+.map-suite{position:absolute;top:.75rem;right:.75rem;display:inline-flex;align-items:center;gap:.4rem;background:var(--ink);color:#fff;
+  font-size:.8rem;font-weight:600;letter-spacing:.06em;padding:.55rem .85rem;border-radius:4px;box-shadow:0 6px 18px rgba(20,17,13,.25);pointer-events:none;}
+.map-suite svg{width:1rem;height:1rem;fill:none;stroke:var(--gold);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.map-btns{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin-top:1rem;}
+.map-btns .btn{text-align:center;padding:1rem .8rem;}
