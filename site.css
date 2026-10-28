@@ -147,3 +147,9 @@ a.perk:hover .perk-ic{background:var(--gold);color:var(--ink);}
 img.logo-mark{display:block;width:2.4rem;height:2.4rem;flex:none;object-fit:cover;background:#000;border-radius:3px;box-shadow:0 2px 8px rgba(20,17,13,.18);}
 @media (max-width:768px){ img.logo-mark{width:2.2rem;height:2.2rem;} }
 @media (min-width:769px) and (max-width:1180px){ img.logo-mark{width:2.1rem;height:2.1rem;} }
+
+/* Logo IL dorado sobre fondo blanco (sin cuadro negro) */
+img.logo-mark{background:transparent;box-shadow:none;border-radius:0;object-fit:contain;width:2.6rem;height:2.6rem;}
+@media (max-width:768px){ img.logo-mark{width:2.4rem;height:2.4rem;} }
+@media (min-width:769px) and (max-width:1180px){ img.logo-mark{width:2.3rem;height:2.3rem;} }
+.logo img.logo-mark{background:transparent;box-shadow:none;border-radius:0;}
