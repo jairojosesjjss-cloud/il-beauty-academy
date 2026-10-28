@@ -81,3 +81,10 @@ a.foot-addr:hover{color:var(--gold-deep);text-decoration:underline;}
   .nav-links{box-shadow:none;visibility:hidden;transition:transform .35s,visibility 0s linear .35s;}
   #navtog:checked ~ .nav-links{box-shadow:-20px 0 60px rgba(20,17,13,.12);visibility:visible;transition:transform .35s;}
 }
+
+/* Bloque final unido (primer paso + ubicación) y franja enlazada */
+.visit-info .visit-note{margin:0 0 1.6rem;line-height:1.85;}
+.visit-info .visit-small{font-size:.85rem;color:var(--gray);margin:.3rem 0 2rem;}
+a.trust-link{text-decoration:none;color:inherit;display:block;transition:background .2s;}
+a.trust-link:hover{background:rgba(201,168,76,.08);}
+@media (max-width:768px){ .visit-ctas .btn{flex:1 1 100%;} }
