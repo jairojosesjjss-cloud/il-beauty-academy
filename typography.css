@@ -17,3 +17,36 @@ button,input,select,textarea{font:inherit;}
 .nav-links a,.nav-cta,.btn,.course-btn,.curriculum-btn,.curriculum-back{letter-spacing:.08em;}
 .course-btn,.curriculum-btn,.curriculum-back{font-size:.72rem;}
 .eyebrow{font-size:.7rem;letter-spacing:.18em;}
+
+/* ---------- Legibilidad: contraste y tamaños mínimos ---------- */
+/* Dorado y gris un poco más oscuros para que el texto pequeño se lea bien (contraste 4.5:1 o más) */
+:root{--gold-deep:#86671d;--gray:#6f695f;}
+/* Estrellas con el dorado oscuro para que se vean sobre fondo blanco */
+.stars,.rev .s{color:var(--gold-deep);}
+/* Tarjetas de servicios: sombra más fuerte para leer el texto sobre la foto */
+.serv::after{background:linear-gradient(to top,rgba(17,17,17,0.88),rgba(17,17,17,0.35) 55%,rgba(17,17,17,0.05) 85%);}
+.serv-cap h4{text-shadow:0 1px 8px rgba(0,0,0,.45);}
+/* Ninguna letra por debajo de 12px */
+.hero-badge .l,.trust-item .s,.course-tag,.serv-cap .link,.rating .cnt,.rev .who,.rev .svc,
+.foot-addr,.foot-links a,.foot-copy,.curriculum-back,.modal-wa,.course-btn,.hero-meta,.msub,.pbadge,.dist-seal{font-size:.75rem;}
+.eyebrow{font-size:.75rem;}
+.nav-links a{font-size:.75rem;}
+.nav-cta{font-size:.72rem;}
+.btn{font-size:.75rem;}
+.curriculum-btn{font-size:.75rem;}
+.rev .svc{color:var(--ink-soft);}
+.curriculum-back,.curriculum-back:link,.curriculum-back:visited,.curriculum-back:hover,.curriculum-back:focus,.curriculum-back:active{font-size:.75rem;}
+/* Menú en pantallas medianas (tablets): que quepa en una sola línea */
+@media (min-width:769px) and (max-width:1180px){
+  nav{padding:1rem 1.6rem;}
+  .logo{font-size:1.15rem;letter-spacing:.1em;white-space:nowrap;}
+  .nav-links{gap:1.1rem;}
+  .nav-links a{font-size:.7rem;letter-spacing:.04em;}
+  .nav-cta{padding:.6rem 1rem;}
+}
+@media (min-width:769px) and (max-width:899px){
+  .logo{font-size:1rem;letter-spacing:.06em;}
+  .nav-links{gap:.8rem;}
+  .nav-links a{font-size:.66rem;letter-spacing:.02em;}
+}
+.serv-cap .link{letter-spacing:.06em;white-space:nowrap;}
