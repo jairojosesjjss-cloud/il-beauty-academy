@@ -307,7 +307,7 @@
   }
 </style>
 <link rel="stylesheet" href="typography.css?v=2"/>
-<link rel="stylesheet" href="/site.css?v=5"/>
+<link rel="stylesheet" href="/site.css?v=6"/>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BeautySalon", "name": "IL Beauty Academy", "url": "https://ilbeautyacademy.com/", "image": "https://ilbeautyacademy.com/img/og-image.jpg", "telephone": "+1-925-390-8288", "address": {"@type": "PostalAddress", "streetAddress": "5065 Deer Valley Rd, Suite 205", "addressLocality": "Antioch", "addressRegion": "CA", "postalCode": "94531", "addressCountry": "US"}, "sameAs": ["https://www.instagram.com/cuidatupiel.vida", "https://www.tiktok.com/@nailslore19", "https://booksy.com/en-us/1698446_il-beauty-academy_nail-salon_103886_antioch"], "hasMap": "https://maps.app.goo.gl/nbDPUWKwXdyxn8jh6"}</script>
 </head>
 <body>
@@ -317,7 +317,7 @@
   <a href="#top" class="logo" aria-label="IL Beauty Academy"><span class="logo-mark" aria-hidden="true">IL</span><span class="logo-text">Beauty Academy</span></a>
   <input type="checkbox" id="navtog"/>
   <ul class="nav-links">
-    <li><a href="#instructora">La Academia</a></li>
+    <li><a href="#top">La Academia</a></li>
     <li><a href="/cursos/">Cursos</a></li>
     <li><a href="#servicios">Servicios</a></li>
     <li><a href="#resenas">Reseñas</a></li>
@@ -328,22 +328,24 @@
   <label class="hamb" for="navtog"><span></span><span></span><span></span></label>
 </nav>
 
-<!-- HERO -->
-<header class="hero" id="top">
-  <div class="hero-text">
-    <span class="eyebrow">Academia de Belleza · Antioch, California</span>
-    <h1 class="display">Tu carrera en la<br><em>belleza</em> empieza aquí</h1>
-    <p>Formación práctica y personalizada de la mano de Lorena Salazar. Aprende las técnicas que de verdad se usan en el salón y da el primer paso hacia tu independencia.</p>
-    <div class="hero-ctas">
-      <a class="btn btn-gold" href="/citas/">Reservar cita</a>
-      <a class="btn btn-ghost" href="/cursos/">Ver cursos</a>
+<!-- PORTADA: Lorena + la academia en un solo bloque -->
+<header class="intro" id="top">
+  <div class="inst-grid">
+    <div class="inst-photo">
+      <div class="frame"></div>
+      <img src="/img/lorena-academia.jpg?v=2" alt="Lorena Salazar, fundadora e instructora de IL Beauty Academy" width="600" height="900" fetchpriority="high"/>
     </div>
-  </div>
-  <div class="hero-media">
-    <img src="/img/lorena-portada.jpg" alt="Lorena Salazar, fundadora e instructora de IL Beauty Academy"/>
-    <div class="hero-badge">
-      <div class="n">15</div>
-      <div class="l">Años de trayectoria</div>
+    <div class="inst-text">
+      <span class="eyebrow">Academia de Belleza · Antioch, California</span>
+      <h1 class="display">Tu carrera en la <em>belleza</em> empieza aquí</h1>
+      <div class="rule"></div>
+      <p class="intro-who"><strong>Lorena Salazar</strong> · Fundadora e instructora</p>
+      <p>Venezolana, emprendedora y apasionada por el mundo de la belleza. Con casi <strong>15 años de trayectoria</strong> en la industria y más de <strong>5 años especializada</strong> en uñas, manicura rusa, nivelación y pedicura en seco.</p>
+      <p>IL Beauty Academy nace con un propósito claro: ofrecer servicios y educación de calidad, un espacio donde la belleza, la preparación y el crecimiento van de la mano. Cada curso se imparte en grupos pequeños, con acompañamiento cercano para que aprendas haciendo.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-gold" href="/citas/">Reservar cita</a>
+        <a class="btn btn-ghost" href="/cursos/">Ver cursos</a>
+      </div>
     </div>
   </div>
 </header>
@@ -358,22 +360,6 @@
   </div>
 </div>
 
-<!-- INSTRUCTORA -->
-<section id="instructora" style="padding-top:5.5rem;padding-bottom:5.5rem;">
-  <div class="inst-grid">
-    <div class="inst-photo reveal">
-      <div class="frame"></div>
-      <img loading="lazy" src="/img/lorena-academia.jpg" alt="Lorena Salazar, fundadora e instructora de IL Beauty Academy"/>
-    </div>
-    <div class="inst-text reveal">
-      <span class="eyebrow">Fundadora e instructora</span>
-      <h2 class="display">Lorena <em>Salazar</em></h2>
-      <div class="rule"></div>
-      <p>Venezolana, emprendedora y apasionada por el mundo de la belleza. Con casi <strong>15 años de trayectoria</strong> en la industria y más de <strong>5 años especializada</strong> en uñas, manicura rusa, nivelación y pedicura en seco.</p>
-      <p>IL Beauty Academy nace con un propósito claro: ofrecer servicios y educación de calidad, un espacio donde la belleza, la preparación y el crecimiento van de la mano. Cada curso se imparte en grupos pequeños, con acompañamiento cercano para que aprendas haciendo.</p>
-    </div>
-  </div>
-</section>
 
 <!-- GRADUADAS + CURSOS (fotos reales de alumnas; el detalle de cursos está en /cursos) -->
 <section id="cursos" class="grads">
@@ -527,7 +513,7 @@ document.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener
   new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)start();else if(v.src)v.pause();});},{threshold:.25}).observe(v);
 })();
 </script>
-<script src="/lang.js?v=4"></script>
+<script src="/lang.js?v=5"></script>
 <script src="/reviews-live.js?v=1"></script>
 </body>
 </html>
