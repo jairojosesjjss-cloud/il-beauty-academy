@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="color-scheme" content="light only"/>
+<title>Reserva tu cita · IL Beauty Academy — Antioch, CA</title>
+<meta name="description" content="Reserva tu cita en IL Beauty Academy en Antioch, CA. Elige servicio, día y hora en línea a través de Booksy."/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+  :root{
+    color-scheme: light;
+    --paper:#ffffff;
+    --paper-2:#faf7f1;
+    --ink:#14110d;
+    --ink-soft:#4a4438;
+    --gray:#8a8378;
+    --gold:#C9A84C;
+    --gold-deep:#9c7823;
+    --line:rgba(20,17,13,0.12);
+    --gold-line:rgba(156,120,35,0.28);
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{background:#fff;}
+  body{background:var(--paper);color:var(--ink);font-family:'Montserrat',sans-serif;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;}
+  a{color:inherit;}
+
+  .eyebrow{font-size:0.62rem;letter-spacing:0.34em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;}
+  .display{font-family:'Cormorant Garamond',serif;font-weight:300;line-height:1.04;}
+  .display em{font-style:italic;color:var(--gold-deep);}
+  .rule{width:54px;height:2px;background:var(--gold);}
+
+  /* ---------- NAV (igual que la portada) ---------- */
+  nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;
+    padding:1.1rem 3.5rem;background:rgba(255,255,255,0.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);}
+  .logo{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:500;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-deep);text-decoration:none;}
+  .logo span{color:var(--ink);}
+  .nav-links{display:flex;align-items:center;gap:2rem;list-style:none;}
+  .nav-links a{display:inline-flex;align-items:center;font-size:0.66rem;letter-spacing:0.18em;text-transform:uppercase;text-decoration:none;color:var(--ink-soft);font-weight:500;transition:color .2s;}
+  .nav-links a:hover{color:var(--gold-deep);}
+  .nav-cta{background:var(--ink);color:#fff !important;padding:0.62rem 1.4rem;font-size:0.62rem;letter-spacing:0.18em;font-weight:600;transition:background .2s;}
+  .nav-cta:hover{background:var(--gold-deep);}
+  .hamb{display:none;flex-direction:column;align-items:center;justify-content:center;gap:5px;width:44px;height:44px;background:none;border:none;cursor:pointer;padding:0;}
+  .hamb span{width:22px;height:2px;background:var(--ink);transition:.3s;}
+  #navtog{display:none;}
+
+  /* ---------- CITAS ---------- */
+  main{flex:1;padding:9rem 2rem 6rem;background:var(--paper-2);border-bottom:1px solid var(--line);}
+  .wrap{max-width:860px;margin:0 auto;}
+  .head{text-align:center;margin-bottom:3rem;}
+  .head .eyebrow{display:block;margin-bottom:1rem;}
+  .head h1{font-size:clamp(2.4rem,5vw,3.8rem);}
+  .head .rule{margin:1.4rem auto 0;}
+  .head p{max-width:560px;margin:1.6rem auto 0;color:var(--ink-soft);font-size:0.95rem;line-height:1.85;}
+
+  .booking-card{background:var(--paper);border:1px solid var(--line);border-top:2px solid var(--gold);box-shadow:0 18px 44px rgba(20,17,13,0.08);padding:3rem 2rem;text-align:center;}
+  .booking-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-bottom:2.4rem;list-style:none;}
+  .booking-steps li{font-size:0.82rem;color:var(--ink-soft);line-height:1.6;}
+  .booking-steps b{display:block;font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:500;color:var(--gold-deep);line-height:1;margin-bottom:.4rem;}
+  /* Aquí Booksy inserta su botón */
+  #booksy-widget{min-height:64px;display:flex;justify-content:center;align-items:center;}
+
+  .booking-alt{margin-top:2rem;padding-top:1.6rem;border-top:1px solid var(--line);font-size:0.82rem;color:var(--gray);}
+  .booking-alt a{color:var(--gold-deep);font-weight:600;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--paper-2);color:var(--ink-soft);padding:3rem 2rem 2.4rem;}
+  .foot-in{max-width:1180px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:1rem;text-align:center;}
+  .foot-logo{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold-deep);}
+  .foot-addr{font-size:0.62rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--gray);}
+  .foot-copy{font-size:0.6rem;letter-spacing:0.12em;color:var(--gray);}
+
+  @media (max-width:768px){
+    nav{padding:.9rem 1.2rem;}
+    .nav-links{position:fixed;top:0;right:0;height:100vh;width:78%;max-width:320px;background:#fff;border-left:1px solid var(--line);flex-direction:column;justify-content:center;align-items:stretch;gap:.4rem;padding:0 2rem;transform:translateX(100%);transition:transform .35s;box-shadow:-10px 0 30px rgba(20,17,13,0.08);}
+    .nav-links a{color:var(--ink);font-size:0.95rem;justify-content:center;padding:.95rem 0;min-height:44px;}
+    .nav-links .nav-cta{color:#fff !important;background:var(--ink);margin-top:.6rem;padding:1rem 1.4rem;}
+    #navtog:checked ~ .nav-links{transform:translateX(0);}
+    .hamb{display:flex;z-index:210;}
+    #navtog:checked ~ .hamb span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    #navtog:checked ~ .hamb span:nth-child(2){opacity:0;}
+    #navtog:checked ~ .hamb span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    main{padding:7rem 1rem 4rem;}
+    .booking-card{padding:2.2rem 1.2rem;}
+    .booking-steps{grid-template-columns:1fr;}
+  }
+</style>
+<link rel="stylesheet" href="/typography.css?v=1"/>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="logo">IL <span>Beauty Academy</span></a>
+  <input type="checkbox" id="navtog"/>
+  <ul class="nav-links">
+    <li><a href="/#instructora">La Academia</a></li>
+    <li><a href="/#cursos">Cursos</a></li>
+    <li><a href="/#servicios">Servicios</a></li>
+    <li><a href="/#resenas">Reseñas</a></li>
+    <li><a href="/#faq">Preguntas</a></li>
+    <li><a class="nav-cta" href="/citas/" aria-current="page">Reservar cita</a></li>
+  </ul>
+  <label class="hamb" for="navtog"><span></span><span></span><span></span></label>
+</nav>
+
+<main>
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Citas en línea · Antioch, California</span>
+      <h1 class="display">Reserva tu <em>cita</em></h1>
+      <div class="rule"></div>
+      <p>Elige tu servicio, el día y la hora que mejor te queden. Tu reserva se confirma al instante y recibirás recordatorios automáticos de Booksy.</p>
+    </div>
+
+    <div class="booking-card">
+      <ol class="booking-steps">
+        <li><b>1</b>Toca el botón de reservar</li>
+        <li><b>2</b>Elige servicio, día y hora</li>
+        <li><b>3</b>Confirma con tu número o correo</li>
+      </ol>
+
+      <!-- Widget oficial de Booksy: inserta su botón justo donde está este script -->
+      <div id="booksy-widget">
+        <script type="text/javascript" src="https://booksy.com/widget/code.js?id=1698446&country=us&lang=es"></script>
+      </div>
+
+      <p class="booking-alt">¿No ves el botón de reservar? <a href="https://booksy.com/en-us/1698446_il-beauty-academy_nail-salon_103886_antioch" target="_blank" rel="noopener">Abre nuestra página de Booksy</a> para agendar.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="foot-in">
+    <div class="foot-logo">IL Beauty Academy</div>
+    <div class="foot-addr">5065 Deer Valley Rd, Suite 205 · Antioch, CA 94531</div>
+    <div class="foot-copy">© 2026 IL Beauty Academy · Todos los derechos reservados</div>
+  </div>
+</footer>
+
+<script>
+/* Cerrar menú móvil al tocar un enlace */
+document.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('navtog').checked=false;});});
+</script>
+</body>
+</html>
