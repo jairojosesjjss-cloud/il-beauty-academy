@@ -168,3 +168,15 @@ a.perk:hover .perk-ic{background:var(--gold);color:#fff;}
 .visit-ctas{display:grid;grid-template-columns:1fr;max-width:380px;}
 .visit-ctas .btn{text-align:center;}
 @media (max-width:768px){ .visit-ctas{max-width:none;} }
+
+/* Horario */
+.hours{background:#fff;border:1px solid var(--line);border-left:3px solid var(--gold);padding:1rem 1.2rem;margin:0 0 1.6rem;max-width:380px;}
+.hours-head{display:flex;justify-content:space-between;align-items:center;gap:.8rem;margin-bottom:.55rem;}
+.hours-title{font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);}
+.hours-now{font-size:.72rem;font-weight:600;padding:.25rem .6rem;border-radius:999px;}
+.hours-now.is-open{background:#e7f4ea;color:#1e6b34;}
+.hours-now.is-closed{background:#f6e9e7;color:#8a2f22;}
+.hours-row{display:flex;justify-content:space-between;gap:1rem;font-size:.9rem;color:var(--ink);padding:.25rem 0;}
+.hours-row span:last-child{font-variant-numeric:tabular-nums;color:var(--ink-soft);}
+.foot-hours{font-size:.75rem;color:var(--ink-soft);letter-spacing:.04em;}
+@media (max-width:768px){ .hours{max-width:none;} }
