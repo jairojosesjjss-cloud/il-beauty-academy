@@ -161,3 +161,10 @@ img.logo-mark{background:transparent;box-shadow:none;border-radius:0;object-fit:
 .perk-tx strong{color:var(--ink);}
 .perk-tx span{color:var(--gray);}
 a.perk:hover .perk-ic{background:var(--gold);color:#fff;}
+
+/* Teléfono: botón para llamar y número en el pie de página */
+.foot-phone{font-size:.8rem;letter-spacing:.08em;color:var(--ink);text-decoration:none;font-weight:600;}
+.foot-phone:hover{color:var(--gold-deep);text-decoration:underline;}
+.visit-ctas{display:grid;grid-template-columns:1fr;max-width:380px;}
+.visit-ctas .btn{text-align:center;}
+@media (max-width:768px){ .visit-ctas{max-width:none;} }
