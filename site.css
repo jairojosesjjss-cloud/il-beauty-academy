@@ -246,3 +246,33 @@ body:not(.bf-over) .bf-off{display:none !important;}
 }
 .bf-day{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-deep);margin:1.4rem 0 .3rem;}
 .bf-col h3+.bf-day{margin-top:.4rem;}
+
+/* ===== Manicura Rusa Pro: inicio flexible, video, reseñas, preguntas y barra fija ===== */
+.bf-flex{background:#fff;border:1px solid var(--line);border-left:3px solid var(--gold);padding:1rem 1.2rem;margin:0 0 1.6rem;max-width:520px;}
+.bf-flex-items{display:flex;flex-wrap:wrap;gap:.5rem 1.4rem;margin-bottom:.5rem;}
+.bf-flex-items span{font-weight:700;font-size:.95rem;color:var(--ink);}
+.bf-flex p{font-size:.88rem;line-height:1.7;color:var(--ink-soft);margin:0;}
+.bf-flex-center{margin:0 auto 2rem;max-width:720px;text-align:center;}
+.bf-flex-center .bf-flex-items{justify-content:center;}
+.bf-format-cards{grid-template-columns:repeat(4,1fr);}
+.bf-video-sec{background:var(--ink);padding:3rem 2rem;}
+.bf-video{width:min(100%,calc(80vh * 9 / 16));max-width:440px;aspect-ratio:9/16;margin:0 auto;background:#000;overflow:hidden;}
+.bf-video video{display:block;width:100%;height:100%;object-fit:cover;}
+.bf-reviews{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.bf-rev-grid{grid-template-columns:repeat(3,1fr);}
+.bf-rev-more{text-align:center;margin-top:2.2rem;}
+.bf-faq .faq .ans a{color:var(--gold-deep);font-weight:600;}
+.bf-sticky{display:none;}
+@media (max-width:1000px){ .bf-format-cards{grid-template-columns:repeat(2,1fr);} .bf-rev-grid{grid-template-columns:1fr;} }
+@media (max-width:860px){ .bf-format-cards{grid-template-columns:1fr;} }
+@media (max-width:768px){
+  .bf-video-sec{padding:0;}
+  .bf-video{width:100%;max-width:none;max-height:80vh;}
+  .bf-flex{max-width:none;}
+  .bf-sticky{display:flex;align-items:center;justify-content:space-between;gap:.8rem;position:fixed;left:0;right:0;bottom:0;z-index:190;
+    background:#fff;border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(20,17,13,.12);padding:.65rem 1rem calc(.65rem + env(safe-area-inset-bottom));}
+  .bf-sticky-txt{font-weight:700;font-size:.95rem;color:var(--ink);white-space:nowrap;}
+  .bf-sticky-btn{background:#15803d;color:#fff !important;text-decoration:none;font-weight:700;font-size:.85rem;padding:.8rem 1rem;border-radius:6px;white-space:nowrap;}
+  body:has(.bf-sticky){padding-bottom:calc(76px + env(safe-area-inset-bottom));}
+}
+.bf section[id]{scroll-margin-top:84px;}
