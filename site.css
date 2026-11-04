@@ -244,3 +244,5 @@ body:not(.bf-over) .bf-off{display:none !important;}
   .bf-ctas{max-width:none;}
   .bf-format-cards,.bf-cols{grid-template-columns:1fr;}
 }
+.bf-day{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-deep);margin:1.4rem 0 .3rem;}
+.bf-col h3+.bf-day{margin-top:.4rem;}
