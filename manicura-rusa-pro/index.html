@@ -380,22 +380,6 @@ fbq('track','ViewContent',{content_name:'Manicura Rusa Pro',content_category:'Cu
   </div>
 </section>
 
-<!-- VIDEO DEL CURSO (vertical 9:16). Para poner el video: sube el archivo a /img/ (por ejemplo /img/manicura-rusa-pro.mp4)
-     y quita los comentarios de la línea <source>. La imagen de muestra (poster) se ve mientras tanto. -->
-<section class="bf-video-sec" aria-label="Video del curso">
-  <div class="bf-video">
-    <img class="bf-video-ph" src="/img/manicura-rusa.jpg?v=2" alt="Manicura Rusa Pro en IL Beauty Academy" width="600" height="800" loading="lazy"/>
-    <video muted loop playsinline controls preload="metadata" hidden poster="/img/manicura-rusa.jpg?v=2" aria-label="Video del curso de Manicura Rusa Pro">
-      <!-- <source src="/img/manicura-rusa-pro.mp4" type="video/mp4"/> -->
-    </video>
-  </div>
-  <script>
-  /* Muestra el video solo cuando tiene archivo (<source>); mientras tanto se ve la foto */
-  (function(){var w=document.currentScript.previousElementSibling,v=w.querySelector('video'),ph=w.querySelector('.bf-video-ph');
-    if(v&&v.querySelector('source')){ph.remove();v.hidden=false;v.autoplay=true;var p=v.play();if(p&&p.catch)p.catch(function(){});}
-  })();
-  </script>
-</section>
 
 <section id="detalles" class="bf-details">
   <div class="wrap">
