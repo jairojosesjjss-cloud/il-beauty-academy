@@ -307,7 +307,22 @@
   }
 </style>
 <link rel="stylesheet" href="/typography.css?v=2"/>
-<link rel="stylesheet" href="/site.css?v=16"/>
+<link rel="stylesheet" href="/site.css?v=17"/>
+<!-- Meta Pixel: reemplaza [PIXEL_ID] por el número del píxel. Mientras diga [PIXEL_ID] no se envía nada. -->
+<script>
+window.IL_PIXEL_ID='[PIXEL_ID]';
+if(/^\d+$/.test(window.IL_PIXEL_ID)){
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init',window.IL_PIXEL_ID);
+fbq('track','PageView');
+fbq('track','ViewContent',{content_name:'Manicura Rusa Pro',content_category:'Curso',value:850,currency:'USD'});
+}
+</script>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=[PIXEL_ID]&ev=PageView&noscript=1"/></noscript>
 </head>
 <body>
 
@@ -319,8 +334,8 @@
     <li><a href="/#top">La Academia</a></li>
     <li><a href="/cursos/">Cursos</a></li>
     <li><a href="/#servicios">Servicios</a></li>
-    <li><a href="/#resenas">Reseñas</a></li>
-    <li><a href="/#faq">Preguntas</a></li>
+    <li><a href="#resenas">Reseñas</a></li>
+    <li><a href="#faq">Preguntas</a></li>
     <li><a class="nav-cta" href="/citas/">Reservar cita</a></li>
   </ul>
   <div class="lang-switch" role="group" aria-label="Idioma / Language"><button type="button" data-lang="es" lang="es" aria-pressed="true">ES</button><button type="button" data-lang="en" lang="en" aria-pressed="false">EN</button></div>
@@ -341,6 +356,10 @@
       <p class="bf-format">3 clases · 1 día por semana · 5 horas por día<br/><strong>+ 1 día extra de práctica en la academia con tu modelo</strong></p>
       <div class="bf-price bf-on"><span class="bf-old">$1,100</span><span class="bf-new">$850</span><span class="bf-save">Ahorras $250</span></div>
       <div class="bf-price bf-off"><span class="bf-new">$1,100</span></div>
+      <div class="bf-flex">
+        <div class="bf-flex-items"><span>📅 Tú eliges cuándo empezar</span><span>👩‍🏫 Clase personalizada o grupal</span></div>
+        <p>El curso comienza cuando tú te inscribas. Elige tu día de clase y lo ajustamos a tu horario, en clase personalizada o en grupo.</p>
+      </div>
       <div class="bf-count bf-on" aria-live="polite">
         <div class="bf-count-label">La oferta termina en</div>
         <div class="bf-boxes">
@@ -361,6 +380,16 @@
   </div>
 </section>
 
+<!-- VIDEO DEL CURSO (vertical 9:16). Para poner el video: sube el archivo a /img/ (por ejemplo /img/manicura-rusa-pro.mp4)
+     y quita los comentarios de la línea <source>. La imagen de muestra (poster) se ve mientras tanto. -->
+<section class="bf-video-sec" aria-label="Video del curso">
+  <div class="bf-video">
+    <video autoplay muted loop playsinline controls preload="metadata" poster="/img/manicura-rusa.jpg?v=2" aria-label="Video del curso de Manicura Rusa Pro">
+      <!-- <source src="/img/manicura-rusa-pro.mp4" type="video/mp4"/> -->
+    </video>
+  </div>
+</section>
+
 <section id="detalles" class="bf-details">
   <div class="wrap">
     <div class="head center reveal">
@@ -369,10 +398,15 @@
       <div class="rule"></div>
       <p class="bf-intro">Perfecciona la técnica de Manicura Rusa más solicitada del momento, ideal tanto para quienes comienzan como para profesionales que buscan refinar su trabajo. Aprenderás preparación impecable de la uña, uso experto del torno, nivelación con gel y aplicación bajo cutícula con resultados de salón. Una formación práctica para elevar la calidad y la precisión de tu trabajo.</p>
     </div>
+    <div class="bf-flex bf-flex-center reveal">
+        <div class="bf-flex-items"><span>📅 Tú eliges cuándo empezar</span><span>👩‍🏫 Clase personalizada o grupal</span></div>
+        <p>El curso comienza cuando tú te inscribas. Elige tu día de clase y lo ajustamos a tu horario, en clase personalizada o en grupo.</p>
+      </div>
     <div class="bf-format-cards reveal">
       <div class="bf-fc"><strong>3 clases</strong><span>Una por semana, 5 horas cada una</span></div>
       <div class="bf-fc"><strong>Día de práctica</strong><span>En la academia, con una modelo que tú traes</span></div>
       <div class="bf-fc"><strong>Kit incluido</strong><span>Y certificado de participación</span></div>
+      <div class="bf-fc"><strong>Inicio flexible</strong><span>Tú eliges cuándo empezar, en clase personalizada o grupal</span></div>
     </div>
     <div class="bf-cols reveal">
       <div class="bf-col">
@@ -457,7 +491,52 @@
   </div>
 </section>
 
+<!-- RESEÑAS: reemplaza [RESEÑA X] y [NOMBRE X] por reseñas reales de Google o Booksy -->
+<section id="resenas" class="bf-reviews">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">Opiniones</span>
+      <h2 class="display" data-en="What our <em>students</em> say">Lo que dicen nuestras <em>alumnas</em></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="rev-grid bf-rev-grid">
+      <div class="rev reveal"><div class="s" aria-label="5 estrellas">★★★★★</div><p>"[RESEÑA 1]"</p><div class="who">[NOMBRE 1]</div><div class="svc">Manicura Rusa Pro</div></div>
+      <div class="rev reveal"><div class="s" aria-label="5 estrellas">★★★★★</div><p>"[RESEÑA 2]"</p><div class="who">[NOMBRE 2]</div><div class="svc">Manicura Rusa Pro</div></div>
+      <div class="rev reveal"><div class="s" aria-label="5 estrellas">★★★★★</div><p>"[RESEÑA 3]"</p><div class="who">[NOMBRE 3]</div><div class="svc">Manicura Rusa Pro</div></div>
+    </div>
+    <div class="bf-rev-more reveal"><a class="btn btn-ghost" href="https://maps.app.goo.gl/nbDPUWKwXdyxn8jh6" target="_blank" rel="noopener">Ver más reseñas en Google</a></div>
+  </div>
+</section>
+
+<!-- PREGUNTAS FRECUENTES -->
+<section id="faq" class="bf-faq">
+  <div class="faq-wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">Antes de empezar</span>
+      <h2 class="display" data-en="Frequently asked <em>questions</em>">Preguntas <em>frecuentes</em></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="reveal">
+      <details class="faq"><summary>¿Necesito experiencia previa? <span class="plus">+</span></summary><div class="ans">No. El curso es para principiantes y también para quienes ya hacen uñas y quieren perfeccionar su técnica.</div></details>
+      <details class="faq"><summary>¿Cuándo empieza el curso? <span class="plus">+</span></summary><div class="ans">Cuando tú quieras. Al inscribirte eliges tu día de clase.</div></details>
+      <details class="faq"><summary>¿Es personalizado o grupal? <span class="plus">+</span></summary><div class="ans">Puede ser de las dos formas, según lo que prefieras y las alumnas inscritas.</div></details>
+      <details class="faq"><summary>¿Cuánto duran las clases? <span class="plus">+</span></summary><div class="ans">3 clases, una por semana, de 5 horas cada una, más 1 día extra de práctica en la academia con tu propia modelo.</div></details>
+      <details class="faq"><summary>¿Qué incluye? <span class="plus">+</span></summary><div class="ans">Kit profesional, manual de estudio, materiales de práctica, certificado de participación, coffee break y apoyo después del curso.</div></details>
+      <details class="faq"><summary>¿Tengo que llevar modelo? <span class="plus">+</span></summary><div class="ans">Solo para el día extra de práctica.</div></details>
+      <details class="faq"><summary>¿Hasta cuándo es el precio de Black Friday? <span class="plus">+</span></summary><div class="ans">Hasta el sábado 28 de noviembre de 2026 a las 11:59 PM (hora de California).</div></details>
+      <details class="faq"><summary>¿Cómo reservo mi lugar? <span class="plus">+</span></summary><div class="ans">Escríbenos por WhatsApp al <a href="https://wa.me/19253908288?text=Hola%2C%20quiero%20reservar%20Manicura%20Rusa%20Pro%20con%20el%20descuento%20de%20Black%20Friday%20(%24850)" target="_blank" rel="noopener">(925) 390-8288</a>.</div></details>
+    </div>
+  </div>
+</section>
 </main>
+
+<!-- Barra fija para reservar (solo celular) -->
+<div class="bf-sticky" role="region" aria-label="Reservar">
+  <span class="bf-sticky-txt bf-on">$850 · Black Friday</span>
+  <span class="bf-sticky-txt bf-off">Manicura Rusa Pro · $1,100</span>
+  <a class="bf-sticky-btn bf-on" href="https://wa.me/19253908288?text=Hola%2C%20quiero%20reservar%20Manicura%20Rusa%20Pro%20con%20el%20descuento%20de%20Black%20Friday%20(%24850)" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+  <a class="bf-sticky-btn bf-off" href="https://wa.me/19253908288?text=Hola%2C%20quiero%20reservar%20mi%20lugar%20en%20Manicura%20Rusa%20Pro" target="_blank" rel="noopener">Reservar por WhatsApp</a>
+</div>
 
 <script>
 /* Conteo regresivo: la oferta termina el sábado 28/11/2026 a las 11:59:59 PM hora de California */
@@ -514,6 +593,13 @@ document.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener
   new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)start();else if(v.src)v.pause();});},{threshold:.25}).observe(v);
 })();
 </script>
-<script src="/lang.js?v=11"></script>
+<script>
+/* Píxel: "Contact" cada vez que tocan un botón de WhatsApp o de enviar texto */
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a[href*="wa.me"],a[href^="sms:"]');
+  if(a&&window.fbq)fbq('track','Contact',{content_name:'Manicura Rusa Pro',method:a.href.indexOf('sms:')===0?'sms':'whatsapp'});
+},true);
+</script>
+<script src="/lang.js?v=12"></script>
 </body>
 </html>
