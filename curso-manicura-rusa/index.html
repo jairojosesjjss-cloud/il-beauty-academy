@@ -80,6 +80,15 @@ fbq('track','PageView');
 </main>
 <footer>IL Beauty Academy · Antioch, California<br><a href="sms:+19253908288">Texto: +1 925 390-8288</a></footer>
 <script src="language.js?v=2"></script>
-<script src="/pixel-contact.js?v=1"></script>
+<script>
+document.addEventListener('click', function (e) {
+  var a = e.target.closest('a[href*="wa.me"], a[href*="whatsapp.com"], a[href^="sms:"]');
+  if (!a || typeof fbq !== 'function') return;
+  fbq('track', 'Contact', {
+    content_name: document.title,
+    method: a.href.indexOf('sms:') === 0 ? 'sms' : 'whatsapp'
+  });
+}, true);
+</script>
 </body>
 </html>

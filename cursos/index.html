@@ -739,6 +739,15 @@ if(Date.now()>Date.parse('2026-11-29T07:59:59Z'))document.body.classList.add('bf
 })();
 </script>
 <script src="/lang.js?v=12"></script>
-<script src="/pixel-contact.js?v=1"></script>
+<script>
+document.addEventListener('click', function (e) {
+  var a = e.target.closest('a[href*="wa.me"], a[href*="whatsapp.com"], a[href^="sms:"]');
+  if (!a || typeof fbq !== 'function') return;
+  fbq('track', 'Contact', {
+    content_name: document.title,
+    method: a.href.indexOf('sms:') === 0 ? 'sms' : 'whatsapp'
+  });
+}, true);
+</script>
 </body>
 </html>
