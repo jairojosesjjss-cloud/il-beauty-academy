@@ -308,9 +308,9 @@
 </style>
 <link rel="stylesheet" href="/typography.css?v=2"/>
 <link rel="stylesheet" href="/site.css?v=18"/>
-<!-- Meta Pixel: reemplaza [PIXEL_ID] por el número del píxel. Mientras diga [PIXEL_ID] no se envía nada. -->
+<!-- Meta Pixel -->
 <script>
-window.IL_PIXEL_ID='[PIXEL_ID]';
+window.IL_PIXEL_ID='1121499000759709';
 if(/^\d+$/.test(window.IL_PIXEL_ID)){
 !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
@@ -322,7 +322,7 @@ fbq('track','PageView');
 fbq('track','ViewContent',{content_name:'Manicura Rusa Pro',content_category:'Curso',value:850,currency:'USD'});
 }
 </script>
-<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=[PIXEL_ID]&ev=PageView&noscript=1"/></noscript>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1121499000759709&ev=PageView&noscript=1"/></noscript>
 </head>
 <body>
 
@@ -568,13 +568,7 @@ document.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener
   new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)start();else if(v.src)v.pause();});},{threshold:.25}).observe(v);
 })();
 </script>
-<script>
-/* Píxel: "Contact" cada vez que tocan un botón de WhatsApp o de enviar texto */
-document.addEventListener('click',function(e){
-  var a=e.target.closest&&e.target.closest('a[href*="wa.me"],a[href^="sms:"]');
-  if(a&&window.fbq)fbq('track','Contact',{content_name:'Manicura Rusa Pro',method:a.href.indexOf('sms:')===0?'sms':'whatsapp'});
-},true);
-</script>
 <script src="/lang.js?v=12"></script>
+<script src="/pixel-contact.js?v=1"></script>
 </body>
 </html>
