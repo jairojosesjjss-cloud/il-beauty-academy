@@ -334,7 +334,7 @@ fbq('track','ViewContent',{content_name:'Manicura Rusa Pro',content_category:'Cu
     <li><a href="/#top">La Academia</a></li>
     <li><a href="/cursos/">Cursos</a></li>
     <li><a href="/#servicios">Servicios</a></li>
-    <li><a href="/#resenas">Reseñas</a></li>
+    <li><a href="#resenas">Reseñas</a></li>
     <li><a href="#faq">Preguntas</a></li>
     <li><a class="nav-cta" href="/citas/">Reservar cita</a></li>
   </ul>
@@ -483,6 +483,27 @@ fbq('track','ViewContent',{content_name:'Manicura Rusa Pro',content_category:'Cu
 </section>
 
 
+<!-- RESEÑAS -->
+<section id="resenas">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">Lo que dicen nuestras clientas</span>
+      <h2 class="display"><em>Reseñas</em></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="rating reveal">
+      <div class="num">5.0</div>
+      <div><div class="stars">★★★★★</div><div class="cnt">Reseñas verificadas · Booksy</div></div>
+    </div>
+    <div class="rev-grid">
+      <div class="rev reveal"><div class="s">★★★★★</div><p>"She's amazing! I love my nails, and the best thing is that they last 4–5 weeks."</p><div class="who">Mireivis</div><div class="svc">Manicura</div></div>
+      <div class="rev reveal"><div class="s">★★★★★</div><p>"Me encantó, trabaja súper bien, es muy detallista y su trabajo espectacular. ¡Lo amé!"</p><div class="who">Stephanie</div><div class="svc">Manicura Rusa</div></div>
+      <div class="rev reveal"><div class="s">★★★★★</div><p>"Lorena was very detail oriented, took her time and provided me with great services. You won't regret booking with her!"</p><div class="who">Heidi</div><div class="svc">Press On Gelex + Pedicura</div></div>
+      <div class="rev reveal"><div class="s">★★★★★</div><p>"Su servicio es muy profesional, súper recomendable. Me encantó todo."</p><div class="who">Estefany</div><div class="svc">Manicura y Pedicura Spa</div></div>
+    </div>
+  </div>
+</section>
+
 <!-- PREGUNTAS FRECUENTES -->
 <section id="faq" class="bf-faq">
   <div class="faq-wrap">
@@ -569,6 +590,7 @@ document.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener
 })();
 </script>
 <script src="/lang.js?v=12"></script>
+<script src="/reviews-live.js?v=1"></script>
 <script>
 document.addEventListener('click', function (e) {
   var a = e.target.closest('a[href*="wa.me"], a[href*="whatsapp.com"], a[href^="sms:"]');
